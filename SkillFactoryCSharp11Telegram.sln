@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoicerubkaBot", "Voicerubka\VoicerubkaBot.csproj", "{168AE50B-A2CD-4E90-B445-3FA483BDD156}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{168AE50B-A2CD-4E90-B445-3FA483BDD156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168AE50B-A2CD-4E90-B445-3FA483BDD156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168AE50B-A2CD-4E90-B445-3FA483BDD156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168AE50B-A2CD-4E90-B445-3FA483BDD156}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35F478FC-B1B1-40B1-A8BA-90FE44650E8C}
+	EndGlobalSection
+EndGlobal
