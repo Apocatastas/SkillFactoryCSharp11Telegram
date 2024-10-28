@@ -5,6 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Telegram.Bot;
 using VoicerubkaBot;
+using VoicerubkaBot.Configuration;
+using VoicerubkaBot.Controllers;
+using VoicerubkaBot.Services;
 
 namespace VoicerubkaBot
 {
@@ -28,10 +31,29 @@ namespace VoicerubkaBot
 
         static void ConfigureServices(IServiceCollection services)
         {
-            // Регистрируем объект TelegramBotClient c токеном подключения
-            services.AddSingleton<ITelegramBotClient>(provider => new TelegramBotClient("8196789947:AAHl0aeRQti42mS4ktte5foxZRnJSGoVUZ8"));
-            // Регистрируем постоянно активный сервис бота
+            AppSettings appSettings = BuildAppSettings();
+            services.AddSingleton(appSettings);
+            services.AddSingleton<IStorage, MemoryStorage>();
+
+            // Подключаем контроллеры сообщений и кнопок
+            services.AddTransient<DefaultMessageController>();
+            services.AddTransient<VoiceMessageController>();
+            services.AddTransient<TextMessageController>();
+            services.AddTransient<InlineKeyboardController>();
+
+            services.AddSingleton<ITelegramBotClient>(provider => new TelegramBotClient(appSettings.BotToken));
             services.AddHostedService<Bot>();
+        }
+
+        static AppSettings BuildAppSettings()
+        {
+            return new AppSettings()
+            {
+                DownloadsFolder = "C:\\Users\\evmor\\Downloads",
+                BotToken = "8196789947:AAHl0aeRQti42mS4ktte5foxZRnJSGoVUZ8",
+                AudioFileName = "audio",
+                InputAudioFormat = "ogg",
+            };
         }
     }
 }
