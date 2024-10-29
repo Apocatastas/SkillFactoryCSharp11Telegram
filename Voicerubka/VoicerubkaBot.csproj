@@ -18,6 +18,7 @@
     <None Remove="Services\" />
     <None Remove="Configuration\" />
     <None Remove="Extensions\" />
+    <None Remove="Utilities\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -25,5 +26,6 @@
     <Folder Include="Services\" />
     <Folder Include="Configuration\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
 </Project>

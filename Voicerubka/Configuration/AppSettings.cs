@@ -20,6 +20,10 @@ namespace VoicerubkaBot.Configuration
         /// Формат аудио при загрузке
         /// </summary>
         public string InputAudioFormat { get; set; }
+        /// <summary>
+        /// Формат аудио при выгрузке
+        /// </summary>
+        public string OutputAudioFormat { get; set; }
     }
 }
 
