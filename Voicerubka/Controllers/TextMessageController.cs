@@ -26,7 +26,8 @@ namespace VoicerubkaBot.Controllers
                     buttons.Add(new[]
                     {
                         InlineKeyboardButton.WithCallbackData($"🇷🇺 Русский" , $"ru"),
-                        InlineKeyboardButton.WithCallbackData($"🇬🇧 English" , $"en")
+                        InlineKeyboardButton.WithCallbackData($"🇬🇧 English" , $"en"),
+                        InlineKeyboardButton.WithCallbackData($"🇵🇱 Polski" , $"pl")
                     });
 
                     // передаем кнопки вместе с сообщением (параметр ReplyMarkup)

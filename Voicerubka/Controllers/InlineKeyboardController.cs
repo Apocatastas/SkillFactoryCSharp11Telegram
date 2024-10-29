@@ -30,6 +30,7 @@ namespace VoicerubkaBot.Controllers
             {
                 "ru" => "🇷🇺 Русский",
                 "en" => "🇬🇧 Английский",
+                "pl" => "🇵🇱 Polski",
                 _ => String.Empty
             };
 
