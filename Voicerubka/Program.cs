@@ -8,6 +8,7 @@ using VoicerubkaBot;
 using VoicerubkaBot.Configuration;
 using VoicerubkaBot.Controllers;
 using VoicerubkaBot.Services;
+using VoicerubkaBot.Extensions;
 
 namespace VoicerubkaBot
 {
@@ -34,6 +35,7 @@ namespace VoicerubkaBot
             AppSettings appSettings = BuildAppSettings();
             services.AddSingleton(appSettings);
             services.AddSingleton<IStorage, MemoryStorage>();
+            services.AddSingleton<IFileHandler, AudioFileHandler>();
 
             // Подключаем контроллеры сообщений и кнопок
             services.AddTransient<DefaultMessageController>();
@@ -49,7 +51,7 @@ namespace VoicerubkaBot
         {
             return new AppSettings()
             {
-                DownloadsFolder = "C:\\Users\\evmor\\Downloads",
+                DownloadsFolder = "/Users/apocatastas/Downloads/",
                 BotToken = "8196789947:AAHl0aeRQti42mS4ktte5foxZRnJSGoVUZ8",
                 AudioFileName = "audio",
                 InputAudioFormat = "ogg",

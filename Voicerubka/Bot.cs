@@ -5,6 +5,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Microsoft.Extensions.Hosting;
 using VoicerubkaBot.Controllers;
+using VoicerubkaBot.Services;
 
 namespace VoicerubkaBot
 {
@@ -31,6 +32,7 @@ namespace VoicerubkaBot
             _textMessageController = textMessageController;
             _voiceMessageController = voiceMessageController;
             _defaultMessageController = defaultMessageController;
+            
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)

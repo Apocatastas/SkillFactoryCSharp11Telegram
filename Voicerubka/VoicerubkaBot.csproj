@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Telegram.Bot" Version="19.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0-rc.2.24473.5" />
+    <PackageReference Include="FFMpegCore" Version="5.1.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
