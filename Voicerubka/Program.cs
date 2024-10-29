@@ -55,6 +55,7 @@ namespace VoicerubkaBot
                 BotToken = "8196789947:AAHl0aeRQti42mS4ktte5foxZRnJSGoVUZ8",
                 AudioFileName = "audio",
                 OutputAudioFormat = "wav",
+                InputAudioBitrate = 48000,
                 InputAudioFormat = "ogg",
             };
         }
