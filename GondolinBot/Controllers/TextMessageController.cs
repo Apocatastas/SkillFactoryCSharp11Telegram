@@ -23,16 +23,12 @@ namespace GondolinBot.Controllers
             switch (message.Text)
             {
                 case "/start":
-
-                    // Объект, представляющий кноки
                     var buttons = new List<InlineKeyboardButton[]>();
                     buttons.Add(new[]
                     {
                         InlineKeyboardButton.WithCallbackData($"🔤 Подсчет символов в сообщении" , $"text"),
                         InlineKeyboardButton.WithCallbackData($"🔢 Сумма введённых чисел" , $"calc")
                     });
-
-                    // передаем кнопки вместе с сообщением (параметр ReplyMarkup)
                     await _telegramClient.SendTextMessageAsync(message.Chat.Id, $"<b> Этот бот может посчитать длину вашего сообщения или сумму введённых чисел.</b> {Environment.NewLine}" +
                         $"{Environment.NewLine}Если вы выбрали вычисление суммы чисел, введите их через пробел.{Environment.NewLine}", cancellationToken: ct, parseMode: ParseMode.Html, replyMarkup: new InlineKeyboardMarkup(buttons));
                     break;

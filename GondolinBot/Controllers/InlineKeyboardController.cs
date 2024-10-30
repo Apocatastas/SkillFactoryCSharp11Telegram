@@ -22,23 +22,17 @@ namespace GondolinBot.Controllers
         {
             if (callbackQuery?.Data == null)
                 return;
-
-            // Обновление пользовательской сессии новыми данными
             _memoryStorage.GetSession(callbackQuery.From.Id).LanguageCode = callbackQuery.Data;
             _memoryStorage.GetSession(callbackQuery.From.Id).userChoise = callbackQuery.Data;
-            // Генерим информационное сообщение
             string actionType = callbackQuery.Data switch
             {
                 "text" => "🔤 Подсчет символов в сообщении",
                 "calc" => "🔢 Сумма введённых чисел",
                 _ => String.Empty
             };
-
-            // Отправляем в ответ уведомление о выборе
             await _telegramClient.SendTextMessageAsync(callbackQuery.From.Id,
                 $"<b>Вы выбрали - {actionType}.{Environment.NewLine}</b>" +
                 $"{Environment.NewLine}Можно поменять выбор в главном меню.", cancellationToken: ct, parseMode: ParseMode.Html);
-
         }
     }
 }
