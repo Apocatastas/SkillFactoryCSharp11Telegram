@@ -54,7 +54,14 @@ namespace GondolinBot
                 switch (update.Message!.Type)
                 {
                     case MessageType.Text:
-                        await _textMessageController.Handle(update.Message, cancellationToken);
+                        try
+                        {
+                            await _textMessageController.Handle(update.Message, cancellationToken);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("ERROR");
+                        }
                         return;
                     default:
                         await _defaultMessageController.Handle(update.Message, cancellationToken);

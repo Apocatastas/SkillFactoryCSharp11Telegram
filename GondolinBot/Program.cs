@@ -7,6 +7,7 @@ using Telegram.Bot;
 using GondolinBot;
 using GondolinBot.Configuration;
 using GondolinBot.Controllers;
+using GondolinBot.Services;
 
 namespace GondolinBot
 {
@@ -41,6 +42,7 @@ namespace GondolinBot
         {
             AppSettings appSettings = BuildAppSettings();
             services.AddSingleton(appSettings);
+            services.AddSingleton<IStorage, MemoryStorage>();
 
             // Подключаем контроллеры сообщений и кнопок
             services.AddTransient<DefaultMessageController>();
