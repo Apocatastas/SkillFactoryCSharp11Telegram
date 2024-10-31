@@ -52,7 +52,7 @@ namespace VoicerubkaBot
             return new AppSettings()
             {
                 DownloadsFolder = "/Users/apocatastas/Downloads/",
-                BotToken = "8196789947:AAHl0aeRQti42mS4ktte5foxZRnJSGoVUZ8",
+                BotToken = "",
                 AudioFileName = "audio",
                 OutputAudioFormat = "wav",
                 InputAudioBitrate = 48000,

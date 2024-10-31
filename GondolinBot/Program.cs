@@ -56,7 +56,7 @@ namespace GondolinBot
         {
             return new AppSettings()
             {
-                BotToken = "7854755560:AAGPXIIPl1b310rsUogMm3QoghdZFYBlwSg"
+                BotToken = ""
             };
         }
     }
